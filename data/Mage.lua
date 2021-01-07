@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('MAGE', 80000, 2, {
+lib:__RegisterSpells('MAGE', 90002, 2, {
 	COOLDOWN = {
 		   1953, -- Blink
 		  31687, -- Summon Water Elemental (Frost)

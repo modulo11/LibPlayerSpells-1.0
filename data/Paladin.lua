@@ -20,18 +20,19 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('PALADIN', 80000, 1, {
+lib:__RegisterSpells('PALADIN', 90002, 1, {
 	COOLDOWN = {
 		    633, -- Lay on Hands
 		  20473, -- Holy Shock (Holy)
-		  24275, -- Hammer of Wrath (Retribution talent)
+		  24275, -- Hammer of Wrath (Retribution talent) -- baseline now?
 		  35395, -- Crusader Strike (Retribution/Holy)
 		  53385, -- Divine Storm (Retribution)
 		  53595, -- Hammer of the Righteous (Protection)
 		  85222, -- Light of Dawn (Holy)
 		 114158, -- Light's Hammer (Holy talent)
 		 114165, -- Holy Prism (Holy talent)
-		 184092, -- Light of the Protector (Protection)
+		 184092, -- Light of the Protector (Protection) -- remove
+		 85673,  -- Word of Glory (Protection) -- baseline?
 		 184575, -- Blade of Justice (Retribution)
 		 204035, -- Bastion of Light (Protection talent)
 		 205228, -- Consecration (Retribution talent)
@@ -52,6 +53,9 @@ lib:__RegisterSpells('PALADIN', 80000, 1, {
 				CROWD_CTRL = {
 					[ 20066] = 'INCAPACITATE', -- Repentance (talent)
 					[105421] = 'DISORIENT', -- Blinding Light (talent)
+					INCAPACITATE = {
+						10326, -- Turn Evil
+					},
 					STUN = {
 						   853, -- Hammer of Justice
 						205290, -- Wake of Ashes (Retribution talent)
@@ -109,6 +113,7 @@ lib:__RegisterSpells('PALADIN', 80000, 1, {
 					105809, -- Holy Avenger (Holy talent)
 					216331, -- Avenging Crusader (Holy talent)
 					231895, -- Crusade (Retribution talent)
+					327193, -- Moment of Glory (Protection talent)
 				},
 				SURVIVAL = {
 					   498, -- Divine Protection (Holy)
@@ -139,6 +144,10 @@ lib:__RegisterSpells('PALADIN', 80000, 1, {
 			203539, -- Greater Blessing of Wisdom (Retribution)
 			216328, -- Light's Grace (Holy honor talent)
 			216857, -- Guarded by the Light (Protection honor talent)
+			317920, -- Concentration Aura
+			32223,  -- Crusader Aura
+			465,    -- Devotion Aura
+			183435, -- Retribution Aura
 		},
 		PERSONAL = {
 			 54149, -- Infusion of Light (Holy)
@@ -198,12 +207,17 @@ lib:__RegisterSpells('PALADIN', 80000, 1, {
 	[276112] = 190784, -- Divine Steed (Dark Iron Dwarf)
 	[280375] = 280373, -- Redoubt (Protection talent)
 	[281178] = 231832, -- Blade of Wrath (Retribution talent)
+
+	-- [327193] = 31935, -- Moment of Glory (Protection talent) -> Avenger's Shield
+	-- [31935] = 327193, -- Moment of Glory (Protection talent) -> Avenger's Shield
 }, {
 	-- map aura to modified spell(s)
 	[ 31884] = { -- Avenging Wrath
 		24275, -- Hammer of Wrath (Retribution talent)
 		31884, -- Avenging Wrath
 	},
+	[327193] = 31935, -- Moment of Glory (Protection talent) -> Avenger's Shield
+	-- [31935] = 327193, -- Moment of Glory (Protection talent) -> Avenger's Shield
 	[ 54149] = { -- Infusion of Light (Holy)
 		19750, -- Flash of Light
 		82326, -- Holy Light
